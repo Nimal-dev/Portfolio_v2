@@ -1,0 +1,137 @@
+/* Existing styles */
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000814;
+}
+
+#hero {
+  margin-top: 5rem;
+}
+
+.intro {
+  position: relative;
+  align-items: center;
+}
+
+.head-text-1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #fff;
+  font-size: 5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.head-text-2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #fff;
+  font-size: 5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.name-text {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  font-size: 6rem;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero_container {
+  height: 100%;
+  width: 100%;
+}
+
+.profile_col {
+  background-color: #fff;
+  text-align: start;
+  border-radius: 30% 30% 20% 20%;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: profileAppear 1.2s ease forwards;
+  animation-delay: 1s;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+.profile_col:hover {
+  transform: translateY(0) scale(1.03);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+.profilepic {
+  transform: rotateY(180deg);
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.profile_col:hover .profilepic {
+  filter: grayscale(70%);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes profileAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional cursor animation for name */
+.name-text {
+  position: relative;
+}
+
+.name-text::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 10%;
+  height: 80%;
+  width: 3px;
+  background-color: #fff;
+  animation: cursor-blink 1s step-end infinite;
+  opacity: 0;
+  animation-delay: 1.5s;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.role-text{
+  color: #fff;
+}
+.role{
+  font-size: 2rem;
+}
