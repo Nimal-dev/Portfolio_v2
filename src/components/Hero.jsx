@@ -9,7 +9,7 @@ function Hero() {
   useEffect(() => {
     // Initialize Typed.js
     const typed = new Typed(typedElementRef.current, {
-      strings: ["Junior Software Developer"],
+      strings: ["Junior Web Developer"],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 1500,

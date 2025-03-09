@@ -4,6 +4,19 @@ body {
   height: 100%;
   background-color: #000814;
 }
+body::before {
+	--line: hsl(0 0% 95% / 0.25);
+	content: "";
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background:
+		linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+		linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+	mask: linear-gradient(-15deg, transparent 30%, white);
+	top: 0;
+	z-index: -1;
+}
 
 #hero {
   margin-top: 5rem;
@@ -106,6 +119,27 @@ body {
   }
 }
 
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Optional cursor animation for name */
 .name-text {
   position: relative;
@@ -134,4 +168,48 @@ body {
 }
 .role{
   font-size: 2rem;
+}
+
+
+
+
+/* About Section*/
+#About_Section{
+  margin-top: 5rem;
+}
+.about-head-text{
+  align-self: center;
+  text-align: end;
+  line-height: 0.8; /* Added to reduce line spacing */
+}
+.about-head1{
+  
+  font-weight: 800;
+  font-size: 8rem;
+  animation: slideInLeft 1s ease forwards;
+  color: #fff;
+  margin-bottom: 0; /* Remove bottom margin */
+  display: inline-block; /* Optional: helps with tight text stacking */
+}
+.about-head2{
+  text-align: end;
+  font-weight: 800;
+  font-size: 10rem;
+  animation: slideInRight 1s ease forwards;
+  color: #d63384;
+  margin-top: 0; /* Remove top margin */
+  display: block; /* Ensures it's on its own line but without extra spacing */
+}
+
+.about-para{
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #fff;
+
+}
+.para-text1{
+  animation: slideInRight 1s ease forwards;
+}
+.para-text2{
+  animation: slideUp 1s ease forwards;
 }

@@ -22,7 +22,10 @@ function Navbar() {
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item mx-3">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#About_Section">About</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="#">Skills</a>
         </li>
         <li class="nav-item mx-3">
           <a class="nav-link" href="#">Experience</a>
@@ -45,8 +48,11 @@ function Navbar() {
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#About_Section">About</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Skills</a>
+        </li>
         </ul>
       </div>
     </div>
