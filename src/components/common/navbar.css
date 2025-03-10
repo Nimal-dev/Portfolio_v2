@@ -1,7 +1,16 @@
 /* Custom navbar styling */
+
 .custom-navbar {
-  background-color: rgba(33, 37, 41, 0);
+  background-color: #000814af;
   padding: 1rem;
+}
+
+/* Glassmorphic effect for offcanvas */
+.glassmorphic {
+  background: rgba(33, 37, 41, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Make offcanvas full width on mobile */
@@ -35,6 +44,15 @@
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
   width: 100%;
+}
+
+/* Big text for mobile menu */
+.offcanvas .nav-link {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.offcanvas-title{
+  font-weight: 600;
 }
 
 /* Improve button styling */
