@@ -25,7 +25,7 @@ function Navbar() {
               <a class="nav-link" href="#About_Section">About</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Skills</a>
+              <a class="nav-link" href="#Skills_Section">Skills</a>
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="#">Experience</a>
@@ -51,7 +51,7 @@ function Navbar() {
                 <a class="nav-link fs-1" href="#About_Section">About</a>
               </li>
               <li class="nav-item mb-4">
-                <a class="nav-link fs-1" href="#">Skills</a>
+                <a class="nav-link fs-1" href="#Skills_Section">Skills</a>
               </li>
               <li class="nav-item mb-4">
                 <a class="nav-link fs-1" href="#">Experience</a>

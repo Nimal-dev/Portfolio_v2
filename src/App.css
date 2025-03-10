@@ -108,6 +108,39 @@ body::before {
   font-size: clamp(1.2rem, 2vw, 2rem); /* Responsive font size */
 }
 
+/* Social Icons */
+.social-icons a{
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  padding-right: 20px;
+}
+
+.animate-btn{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background-color: black;
+  border-radius: 4rem;
+  font-size: 1rem;
+  color: #cacaca;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  border: 2px solid #ebebeb;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.animate-btn:hover{
+  transform: scale3d(1.03);
+  background-color: #ffffff;
+  color: black;
+  box-shadow: 0 0 25px #979797;
+}
+
+
+
 /* About Section */
 #About_Section {
   margin-top: 3rem;
@@ -289,6 +322,9 @@ body::before {
   #hero, #About_Section {
     margin-top: 2.5rem;
   }
+  .animate-btn{
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -321,6 +357,8 @@ body::before {
   #hero{
     margin-top: 6rem;
   }
+
+  
  #About_Section {
     margin-top: 2rem;
   }
