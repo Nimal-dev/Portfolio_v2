@@ -18,7 +18,7 @@ function Experience() {
                                     <div class="timeline-content">
                                         <h3>Project Associate</h3>
                                         <span><i class="bi bi-briefcase-fill"></i> Logiprompt Techno Solutions Pvt. Ltd.</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+                                        <p>As a Project Associate, I was responsible for developing and implementing software solutions to support project objectives. I designed, coded, and tested applications to improve efficiency and automate processes. Collaborating with teams, I analyzed requirements and delivered scalable solutions. Additionally, I managed project documentation and assisted in key technical decision-making.</p>
                                     </div>
                                 </div>
 
@@ -27,7 +27,7 @@ function Experience() {
                                     <div class="timeline-content">
                                         <h3>Software Trainee Intern</h3>
                                         <span><i class="bi bi-briefcase-fill"></i> Logiprompt Techno Solutions Pvt. Ltd</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+                                        <p>Served as a Software Trainee intern focusing on mobile application development using Flutter framework. Contributed to cross-platform projects, gained hands-on experience with Dart programming language, and collaborated with development teams to implement responsive UI components and integrate APIs. Developed practical skills in the full development lifecycle while working in an agile environment.</p>
                                     </div>
                                 </div>
                             </div>
