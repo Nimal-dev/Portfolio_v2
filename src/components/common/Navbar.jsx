@@ -28,11 +28,11 @@ function Navbar() {
               <a class="nav-link" href="#Skills_Section">Skills</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Experience</a>
+              <a class="nav-link" href="#experience_section">Experience</a>
             </li>
-            <li class="nav-item mx-3">
+            {/* <li class="nav-item mx-3">
               <a class="nav-link" href="#">Works</a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -54,11 +54,11 @@ function Navbar() {
                 <a class="nav-link fs-1" href="#Skills_Section">Skills</a>
               </li>
               <li class="nav-item mb-4">
-                <a class="nav-link fs-1" href="#">Experience</a>
+                <a class="nav-link fs-1" href="#experience_section">Experience</a>
               </li>
-              <li class="nav-item mb-4">
+              {/* <li class="nav-item mb-4">
                 <a class="nav-link fs-1" href="#">Works</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

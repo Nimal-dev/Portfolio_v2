@@ -24,69 +24,69 @@ function Skills() {
 
                     <h2 className="text-center skill-text">Skills</h2>
                     
-                        <div className="skills container">
+                        <div className="skills container" >
                             <ul>
 
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-right" >
                                     <h4>React</h4>
                                     <img src={reactpic} className="skills-logo" alt="React" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>HTML5</h4>
                                     <img src={html} className="skills-logo" alt="html" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-up">
                                     <h4>JavaScript</h4>
                                     <img src={js} className="skills-logo" alt="js" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-left">
                                     <h4>CSS</h4>
                                     <img src={css} id="css" className="skills-logo" alt="CSS" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>BOOTSTRAP</h4>
                                     <img src={bootstrap} className="skills-logo" alt="bootstrap" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>NodeJS</h4>
                                     <img src={nodejs} className="skills-logo" alt="nodejs" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>GITHUB</h4>
                                     <img src={github} className="skills-logo" alt="github" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>GIT</h4>
                                     <img src={git} className="skills-logo" alt="git" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>MongoDB</h4>
                                     <img src={mongodb} className="skills-logo" alt="MongoDB" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>Dart</h4>
                                     <img src={dart} className="skills-logo" alt="Dart" />
                                 </li>
 
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>Flutter</h4>
                                     <img src={flutter} className="skills-logo" alt="Flutter" />
                                 </li>
 
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>MySQL</h4>
                                     <img src={mysql} className="skills-logo" alt="MySQL" />
                                 </li>
 
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>SQLite</h4>
                                     <img src={sqllite} className="skills-logo" alt="SQLite" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>Django</h4>
                                     <img src={django} className="skills-logo" alt="Django" />
                                 </li>
-                                <li className="skills-card">
+                                <li className="skills-card" data-aos="fade-down">
                                     <h4>Arduino</h4>
                                     <img src={arduino} className="skills-logo" alt="Arduino" />
                                 </li>

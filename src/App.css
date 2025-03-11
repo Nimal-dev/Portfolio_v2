@@ -173,6 +173,7 @@ body::before {
 }
 
 .about-para {
+  margin-top: 2rem;
   text-align: justify;
   font-size: clamp(1rem, 1.2vw, 1.2rem); /* Responsive font size */
   color: #fff;
@@ -192,7 +193,7 @@ body::before {
   font-size: clamp(2.5rem, 5.5vw, 5.5rem); /* Responsive font size */
   font-weight: 800;
   color: #fff;
-  animation: fadeInDown 1s ease-in-out;
+  /* animation: fadeInDown 1s ease-in-out;SS */
   text-align: center; /* Center on mobile */
 }
 
@@ -232,14 +233,14 @@ body::before {
   width: clamp(3rem, 9vw, 9rem); /* Responsive logo size */
   max-width: 80%; /* Ensure it fits within the card */
   height: auto;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
 }
 
 .skills-card h4 {
   padding-bottom: 0.5rem;
   font-weight: 700;
   color: white;
-  transition: color 0.3s ease;
+  /* transition: color 0.3s ease; */
   font-size: clamp(0.8rem, 1vw, 1.2rem); /* Responsive font size */
   margin-top: 0.5rem;
 }
@@ -451,3 +452,144 @@ body::before {
     padding-bottom: 0;
   }
 }
+
+
+/* Experience Section */
+#experience_section {
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.experience-head-text {
+  align-self: center;
+  text-align: start;
+  line-height: 0.8;
+}
+
+.experience-head1 {
+  font-weight: 800;
+  font-size: clamp(3rem, 6vw, 6rem); /* Responsive font size */
+  animation: slideInLeft 1s ease forwards;
+  color: #fff;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.experience-head2 {
+  text-align: start;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 5vw, 5rem); /* Responsive font size */
+  animation: slideInRight 1s ease forwards;
+  color: #d63384;
+  margin-top: 0;
+  display: block;
+}
+
+.experience-para {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: clamp(1rem, 1.2vw, 1.2rem); /* Responsive font size */
+  color: #fff;
+  padding: 0 0.5rem;
+}
+
+
+.exp-container {
+  width: 80%;
+  padding: 50px 0;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+  height: 100%;
+  background: #CCD1D9;
+  z-index: 1
+}
+
+.timeline-block {
+  width: -webkit-calc(50% + 8px);
+  width: -moz-calc(50% + 8px);
+  width: calc(50% + 8px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  clear: both;
+}
+
+.timeline-block-right {
+  float: right;
+}
+
+.timeline-block-left {
+  float: left;
+  direction: rtl
+}
+
+.marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #F5F7FA;
+  background: #4FC1E9;
+  margin-top: 10px;
+  z-index: 9999
+}
+
+.timeline-content {
+  width: 95%;
+  padding: 0 15px;
+  color: #fff
+}
+
+.timeline-content h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 800
+}
+
+.timeline-content span {
+  font-size: 15px;
+  color: #e6e6e6;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  line-height: 1.5em;
+  word-spacing: 1px;
+  color: #888;
+}
+
+
+@media screen and (max-width: 768px) {
+  .exp-container:before {
+    left: 8px;
+    width: 2px;
+ }
+  .timeline-block {
+     width: 100%;
+     margin-bottom: 30px;
+  }
+  .timeline-block-right {
+     float: none;
+  }
+
+  .timeline-block-left {
+     float: none;
+     direction: ltr;
+  }
+}
+
