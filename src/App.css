@@ -593,3 +593,53 @@ body::before {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+#footer{
+  background-color: #000814;
+  backdrop-filter: blur(50px);
+}
+.footer-cr{
+  color: #fff;
+}
+
+.footer-pb{
+  color:#fff;
+}
+.footer-pb a{
+  text-decoration: none;
+  color: #d63384;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
