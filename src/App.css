@@ -594,6 +594,21 @@ body::before {
 }
 
 
+/* Projects_section */
+
+#works_section{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.work-head-text{
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 800;
+
+}
+
+
 
 
 

@@ -8,6 +8,7 @@ import Experience from "./Sections/Experience";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import Footer from "./common/Footer";
+import Work from "./Sections/Works";
       
 
 
@@ -21,6 +22,7 @@ function Home() {
         <About/>,
         <Skills/>,
         <Experience/>,
+        {/* <Work/>, */}
         <Footer/>
         </>
     );
