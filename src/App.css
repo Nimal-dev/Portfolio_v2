@@ -600,6 +600,9 @@ body::before {
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+.project-row{
+  margin-top: 5rem;
+}
 
 .work-head-text{
   color: #fff;
@@ -608,7 +611,38 @@ body::before {
 
 }
 
+.project-img{
+  border-radius: 30px;
 
+  background-color: #cacaca;
+}
+.project-img:hover{
+  transform: scaleX(5deg);
+}
+
+.ektha-img{
+  border-radius: 30px;
+  
+}
+.project-head{
+  color: #fff;
+  font-size:5rem;
+  font-weight: 900;
+  text-align: start;
+}
+
+.project-text p{
+  color: #fff;
+  text-align: justify;
+  /* font-size:2rem; */
+  /* font-weight: 900; */
+}
+.site-btn{
+  background-color: #fff;
+  color: #000814;
+  font-weight: 500;
+  padding: 10px 50px 10px 50px;
+}
 
 
 
