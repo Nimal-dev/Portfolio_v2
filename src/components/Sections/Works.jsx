@@ -8,7 +8,6 @@ import ektha from "../../assets/projects/ektha.png";
 import auction from "../../assets/projects/auction.png";
 import donation from "../../assets/projects/donation.png";
 import "./ProjectsCarousel.css"; 
-import { Alert } from "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Works = () => {
   const handleAlert = (event) => {
