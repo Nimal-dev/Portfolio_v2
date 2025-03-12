@@ -22,7 +22,7 @@ function Home() {
         <About/>,
         <Skills/>,
         <Experience/>,
-        <Work/>,
+        {/* <Work/>, */}
         <Footer/>
         </>
     );
