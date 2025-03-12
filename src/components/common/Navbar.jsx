@@ -97,6 +97,11 @@ function Navbar() {
                 Experience
               </a>
             </li>
+            <li className="nav-item mx-3">
+              <a className={`nav-link ${activeSection === "works_section" ? "active" : ""}`} href="#works_section">
+                Works
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -138,6 +143,11 @@ function Navbar() {
               <li className="nav-item mb-4">
                 <a className={`nav-link fs-1 ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section" onClick={closeOffcanvas}>
                   Experience
+                </a>
+              </li>
+              <li className="nav-item mb-4">
+                <a className={`nav-link fs-1 ${activeSection === "works_section" ? "active" : ""}`} href="#works_section" onClick={closeOffcanvas}>
+                  Works
                 </a>
               </li>
             </ul>

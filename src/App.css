@@ -617,7 +617,11 @@ body::before {
   background-color: #cacaca;
 }
 .project-img:hover{
-  transform: scaleX(5deg);
+  /* transform: rotateY(15deg) translateX(5deg) translateZ(20px); */
+    box-shadow: 
+        -15px 15px 20px rgba(0, 0, 0, 0.87),
+        -5px 5px 10px rgba(0, 0, 0, 0.05),
+        10px -10px 10px #97979738;
 }
 
 .ektha-img{
