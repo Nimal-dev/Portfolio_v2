@@ -10,10 +10,10 @@ import donation from "../../assets/donation.png";
 import "./ProjectsCarousel.css"; 
 
 const Works = () => {
-  const handleAlert = (event) => {
-    event.preventDefault(); // Prevents navigation
-    alert("Sorry This site is not available for view.");
-  };
+  // const handleAlert = (event) => {
+  //   event.preventDefault(); // Prevents navigation
+  //   alert("Sorry This site is not available for view.");
+  // };
   // const projects = [
   //   {
   //     id: 1,
@@ -126,7 +126,7 @@ const Works = () => {
                     </p>
                       <a
                         href=""
-                        onClick={handleAlert}
+                        // onClick={handleAlert}
                         className="btn btn-dark project-link"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -156,7 +156,7 @@ const Works = () => {
                     </p>
                     <a
                         href=""
-                        onClick={handleAlert}
+                        // onClick={handleAlert}
                         className="btn btn-dark project-link"
                         target="_blank"
                         rel="noopener noreferrer"
