@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import profilepic from "../assets/me.png";
-import resume from "../assets/Nimal_Prince.pdf"
+import resume from "../assets/Nimal_Prince_Resume.pdf"
 
 function Hero() {
   // Create a reference to the element where we want the typing effect
@@ -10,7 +10,7 @@ function Hero() {
   useEffect(() => {
     // Initialize Typed.js
     const typed = new Typed(typedElementRef.current, {
-      strings: ["Junior Web Developer"],
+      strings: ["Junior Developer"],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 1500,
@@ -47,7 +47,7 @@ function Hero() {
                   <i className="bi bi-envelope-fill"></i>
                 </a>
               </div>
-              <a href={resume} className="btn animate-btn">Download Resume</a>
+              <a href={resume} target="_blank" className="btn animate-btn">Download Resume</a>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 profile_col">
               <img className="img-fluid profilepic" src={profilepic} alt="Profile_Pic" />
