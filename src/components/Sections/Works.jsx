@@ -64,7 +64,7 @@ const Works = () => {
           Projects
         </h1>
         
-        <Swiper
+        {/* <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
           spaceBetween={20}
@@ -78,11 +78,11 @@ const Works = () => {
             768: { slidesPerView: 2, spaceBetween: 30 },
             1024: { slidesPerView: 3, spaceBetween: 40 },
           }}
-          className="projects-carousel"
-        >
+          className="projects-carousel" 
+        >*/}
             
          {/* Project 1 */}
-            <SwiperSlide className="swiper-slide" >
+            {/* <SwiperSlide className="swiper-slide" >
                 
               <div className="project-card" data-aos="fade-down">
 
@@ -108,10 +108,10 @@ const Works = () => {
                 </div>
               </div>
               
-            </SwiperSlide>
+            </SwiperSlide> */}
 
             {/* Project 2 */}
-            <SwiperSlide className="swiper-slide" >
+            {/* <SwiperSlide className="swiper-slide" >
                 
                 <div className="project-card" data-aos="fade-down">
   
@@ -138,10 +138,10 @@ const Works = () => {
                   </div>
                 </div>
                 
-              </SwiperSlide>
+              </SwiperSlide> */}
 
 {/* Project 3 */}
-              <SwiperSlide className="swiper-slide" >
+              {/* <SwiperSlide className="swiper-slide" >
                 
                 <div className="project-card" data-aos="fade-down">
   
@@ -170,7 +170,7 @@ const Works = () => {
                 
               </SwiperSlide>
           
-        </Swiper>
+        </Swiper> */}
         
 
         
