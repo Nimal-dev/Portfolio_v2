@@ -98,7 +98,7 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item mx-3">
-              <a className={`nav-link ${activeSection === "works_section" ? "active" : ""}`} href="#works_section">
+              <a className={`nav-link ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section">
                 Works
               </a>
             </li>
@@ -146,7 +146,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item mb-4">
-                <a className={`nav-link fs-1 ${activeSection === "works_section" ? "active" : ""}`} href="#works_section" onClick={closeOffcanvas}>
+                <a className={`nav-link fs-1 ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section" onClick={closeOffcanvas}>
                   Works
                 </a>
               </li>

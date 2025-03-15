@@ -596,6 +596,60 @@ body::before {
 
 /* Projects_section */
 
+#Works_section{
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+.works_head{
+  font-size: 5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.works_head span{
+  color: #d63384;
+}
+
+.work-head{
+  align-items: center;
+  display: flex;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+.work-head a{
+  display: none;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+}
+.work-head a:hover{
+  color: #d63384;
+
+}
+.work-para{
+  text-align: justify;
+  color: #fff;
+}
+
+.link-hover {
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.link-hover:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+@media (max-width:480px) {
+  .work-head a{
+    display: block;
+  }
+  
+}
+
+
 
 
 
