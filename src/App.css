@@ -223,26 +223,22 @@ body::before {
   list-style-type: none;
   /* Remove bullets */
 }
-
 .skills-card {
   align-self: center;
   margin-top: 1.5rem;
-  background: rgba(63, 56, 56, 0.438);
+  background: rgba(255, 255, 255, 0.088); /* Increased transparency */
+  backdrop-filter: blur(5px); /* Stronger blur for better glass effect */
+  -webkit-backdrop-filter: blur(25px);
   color: #0b1215;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: clamp(10px, 3vw, 20px);
-  /* Responsive padding */
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Softer and more diffused shadow */
+  padding: clamp(10px, 3vw, 20px); /* Responsive padding */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: clamp(100px, 15vw, 15.5rem);
-  /* Responsive width */
-  height: clamp(120px, 18vw, 18rem);
-  /* Responsive height */
+  width: clamp(120px, 16vw, 16rem); /* Responsive width */
+  height: clamp(140px, 20vw, 20rem); /* Responsive height */
   cursor: pointer;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly brighter border */
   display: flex;
   flex-direction: column;
   justify-content: center;

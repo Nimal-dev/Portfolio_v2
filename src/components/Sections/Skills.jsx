@@ -1,4 +1,7 @@
 import React from "react";
+
+
+// Images
 import reactpic from "../../assets/Skills/react.png"
 import html from "../../assets/Skills/html.png"
 import css from "../../assets/Skills/css.png"
