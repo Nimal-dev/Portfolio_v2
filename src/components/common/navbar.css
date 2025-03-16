@@ -2,8 +2,10 @@
 
 .custom-navbar {
   background-color: #000814af;
-  padding: 1rem;
+  padding: 0.5rem; /* Reduced padding to prevent overflow */
+  z-index: 1030; /* Add explicit z-index */
 }
+
 
 /* Glassmorphic effect for offcanvas */
 .glassmorphic {
@@ -17,7 +19,11 @@
 @media (max-width: 991.98px) {
   .offcanvas-fullwidth {
     width: 100% !important;
+    max-width: 100% !important; /* Add this to ensure it respects container */
+    margin: 0;
   }
+
+
   
   .navbar-brand {
     font-size: 1.25rem;

@@ -1,4 +1,5 @@
 import React from "react";
+import "../Sections/testimonials.css"
 import TL from "../../assets/TL.jpg";
 import DC from "../../assets/PC.jpg";
 
@@ -7,25 +8,25 @@ function Testimonials() {
         <>
             <section id="Testimonials" className="py-12 bg-gray-50 sm:py-16 lg:py-20">
                 <div className="container px-4">
-                    <h2 className="testimonial-heading mb-5">
+                    <h2 className="testimonial-heading mb-5" data-aos="fade-up">
                         <span className="testimonial-text1">Testi</span>
                         <span className="testimonial-text2">monials</span>
                     </h2>
                     
                     <div className="row gy-4 justify-content-center">
                         {/* Testimonial 1 */}
-                        <div className="col-12 col-md-6 col-lg-5">
+                        <div className="col-12 col-md-6 col-lg-5" data-aos="fade-right" data-aos-delay="100">
                             <div className="testimonial-item h-100 shadow-sm">
-                                <div className="testimonial-icon1">
+                                <div className="testimonial-icon1" data-aos="zoom-in" data-aos-delay="300">
                                     <i className="bi bi-quote"></i>
                                 </div>
-                                <p className="testimonial-text">
+                                <p className="testimonial-text" data-aos="fade-up" data-aos-delay="200">
                                     Nimal is proactive in seeking feedback, open to guidance, and consistently demonstrates a desire to grow professionally. He's not only focused on his technical contributions but also values collaboration, fitting seamlessly into team projects and actively contributing in discussions. He has shown remarkable dedication and quickly adapted to our workflows and tools. He demonstrates strong foundational skills in programming and a natural problem-solving ability, often delivering clean, well-documented code.
                                 </p>
-                                <div className="testimonial-icon2">
+                                <div className="testimonial-icon2" data-aos="zoom-in" data-aos-delay="300">
                                     <i className="bi bi-quote"></i>
                                 </div>
-                                <div className="testimonial-author mt-4">
+                                <div className="testimonial-author mt-4" data-aos="fade-up" data-aos-delay="400">
                                     <div className="row author-row">
                                         <div className="col-3 col-md-3 col-lg-2">
                                             <img className="img-fluid author-img" src={TL} alt="Team Lead" />
@@ -40,18 +41,18 @@ function Testimonials() {
                         </div>
                         
                         {/* Testimonial 2 */}
-                        <div className="col-12 col-md-6 col-lg-5">
+                        <div className="col-12 col-md-6 col-lg-5" data-aos="fade-left" data-aos-delay="100">
                             <div className="testimonial-item h-100 shadow-sm">
-                                <div className="testimonial-icon1">
+                                <div className="testimonial-icon1" data-aos="zoom-in" data-aos-delay="300">
                                     <i className="bi bi-quote"></i>
                                 </div>
-                                <p className="testimonial-text">
+                                <p className="testimonial-text" data-aos="fade-up" data-aos-delay="200">
                                     Nimal Prince has been a valuable asset in developing both web and mobile applications for our projects. His dedication to clean, maintainable code and his quick adaptability have consistently impressed our team. Nimal demonstrates strong problem-solving skills and a proactive approach, making him an excellent contributor to any project. Nimal also has a keen eye for detail, ensuring that every feature is optimized for both performance and user experience. His collaborative mindset and willingness to learn make him a pleasure to work with on any development team.
                                 </p>
-                                <div className="testimonial-icon2">
+                                <div className="testimonial-icon2" data-aos="zoom-in" data-aos-delay="300">
                                     <i className="bi bi-quote"></i>
                                 </div>
-                                <div className="testimonial-author mt-4">
+                                <div className="testimonial-author mt-4" data-aos="fade-up" data-aos-delay="400">
                                     <div className="row author-row">
                                         <div className="col-3 col-md-3 col-lg-2">
                                             <img className="img-fluid author-img" src={DC} alt="Team Lead" />

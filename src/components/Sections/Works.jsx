@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Sections/works.css"
 import ektha from "../../assets/ektha.png";
 import auction from "../../assets/auction.png";
 import Donation from "../../assets/Donation.png";

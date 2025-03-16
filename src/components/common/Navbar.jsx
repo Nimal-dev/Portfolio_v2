@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // Ensure Bootstrap JavaScript components work correctly
+import("bootstrap/dist/js/bootstrap.bundle.min.js");
 import "./navbar.css";
 
 function Navbar() {
@@ -7,23 +8,28 @@ function Navbar() {
   
   useEffect(() => {
     // Import Bootstrap JS
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
     
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
       const scrollPosition = window.scrollY;
       // Add an offset for the navbar height
       const navbarHeight = document.querySelector(".navbar").offsetHeight;
-      const scrollOffset = scrollPosition + navbarHeight + 20; // Add extra padding
+      const scrollOffset = scrollPosition + navbarHeight + 50; // Increase this value for better detection
+      
+      let currentActive = activeSection;
       
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
         if (scrollOffset >= sectionTop && scrollOffset < sectionTop + sectionHeight) {
-          setActiveSection(section.getAttribute("id"));
+          currentActive = section.getAttribute("id");
         }
       });
+      
+      if (currentActive !== activeSection) {
+        setActiveSection(currentActive);
+      }
     };
       
     window.addEventListener("scroll", handleScroll);
@@ -114,7 +120,7 @@ function Navbar() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              <b>Nimal Prince</b>
+              {/* <b>Nimal Prince</b> */}
             </h5>
             <button
               type="button"

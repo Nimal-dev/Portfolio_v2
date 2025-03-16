@@ -1,0 +1,144 @@
+/* Projects_section */
+
+#Works_section {
+  padding: 4rem 0;
+  background-color: var(--bg-color, #121212); /* Assuming dark background */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.works_head {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.works_head span {
+  color: #d63384;
+}
+
+.project-container {
+  margin: 4rem 0;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-container.reversed .project-content {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  flex: 1;
+  min-width: 250px;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-text {
+  flex: 1.5;
+}
+
+.work-head {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.work-head a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.work-head a:hover {
+  color: #d63384;
+}
+
+.work-para {
+    text-align: justify;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.link-hover {
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.link-hover:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+  .works_head {
+    font-size: 3rem;
+  }
+  
+  .work-head {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column !important;
+  }
+  
+  .project-image, .project-text {
+    width: 100%;
+  }
+  
+  .works_head {
+    font-size: 2.8rem;
+  }
+  
+  .work-head {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .works_head {
+    font-size: 2.5rem;
+  }
+  
+  .work-head {
+    font-size: 1.8rem;
+  }
+  
+  .work-para {
+    font-size: 0.95rem;
+  }
+  
+  #Works_section {
+    padding: 2rem 0;
+  }
+  
+  .project-container {
+    margin: 2.5rem 0;
+  }
+}
