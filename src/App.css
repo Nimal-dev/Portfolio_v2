@@ -6,7 +6,8 @@ body {
   padding: 0;
   background-color: #000814;
   overflow-x: hidden;
-  font-size: 16px; /* Base font size for better scaling */
+  font-size: 16px;
+  /* Base font size for better scaling */
 }
 
 body::before {
@@ -37,10 +38,12 @@ body::before {
   align-items: center;
 }
 
-.head-text-1, .head-text-2 {
+.head-text-1,
+.head-text-2 {
   font-family: 'Times New Roman', Times, serif;
   color: #fff;
-  font-size: clamp(2rem, 5vw, 5rem); /* Responsive font size */
+  font-size: clamp(2rem, 5vw, 5rem);
+  /* Responsive font size */
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
 }
@@ -57,7 +60,8 @@ body::before {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 800;
   color: #fff;
-  font-size: clamp(2.5rem, 6vw, 6rem); /* Responsive font size */
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  /* Responsive font size */
   opacity: 0;
   animation: slideUp 1s ease forwards;
   animation-delay: 0.6s;
@@ -79,8 +83,10 @@ body::before {
   animation-delay: 1s;
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease;
-  max-width: 100%; /* Ensure it doesn't overflow on small screens */
-  margin: 0 auto; /* Center it on smaller screens */
+  max-width: 100%;
+  /* Ensure it doesn't overflow on small screens */
+  margin: 0 auto;
+  /* Center it on smaller screens */
 }
 
 .profile_col:hover {
@@ -92,7 +98,8 @@ body::before {
   transform: rotateY(180deg);
   filter: grayscale(100%);
   transition: filter 0.5s ease;
-  max-width: 100%; /* Ensure image is responsive */
+  max-width: 100%;
+  /* Ensure image is responsive */
   height: auto;
 }
 
@@ -105,18 +112,19 @@ body::before {
 }
 
 .role {
-  font-size: clamp(1.2rem, 2vw, 2rem); /* Responsive font size */
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  /* Responsive font size */
 }
 
 /* Social Icons */
-.social-icons a{
+.social-icons a {
   text-decoration: none;
   font-size: 2rem;
   color: #fff;
   padding-right: 20px;
 }
 
-.animate-btn{
+.animate-btn {
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: inline-block;
@@ -132,7 +140,7 @@ body::before {
   cursor: pointer;
 }
 
-.animate-btn:hover{
+.animate-btn:hover {
   transform: scale3d(1.03);
   background-color: #ffffff;
   color: black;
@@ -155,7 +163,8 @@ body::before {
 
 .about-head1 {
   font-weight: 800;
-  font-size: clamp(3rem, 8vw, 8rem); /* Responsive font size */
+  font-size: clamp(3rem, 8vw, 8rem);
+  /* Responsive font size */
   animation: slideInLeft 1s ease forwards;
   color: #fff;
   margin-bottom: 0;
@@ -165,7 +174,8 @@ body::before {
 .about-head2 {
   text-align: end;
   font-weight: 800;
-  font-size: clamp(3.5rem, 10vw, 10rem); /* Responsive font size */
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  /* Responsive font size */
   animation: slideInRight 1s ease forwards;
   color: #d63384;
   margin-top: 0;
@@ -175,7 +185,8 @@ body::before {
 .about-para {
   margin-top: 2rem;
   text-align: justify;
-  font-size: clamp(1rem, 1.2vw, 1.2rem); /* Responsive font size */
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  /* Responsive font size */
   color: #fff;
   padding: 0 0.5rem;
 }
@@ -190,11 +201,13 @@ body::before {
 
 /* Skills Section */
 .skill-text {
-  font-size: clamp(2.5rem, 5.5vw, 5.5rem); /* Responsive font size */
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+  /* Responsive font size */
   font-weight: 800;
   color: #fff;
   /* animation: fadeInDown 1s ease-in-out;SS */
-  text-align: center; /* Center on mobile */
+  text-align: center;
+  /* Center on mobile */
 }
 
 .skills ul {
@@ -202,9 +215,12 @@ body::before {
   flex-wrap: wrap;
   margin-top: 1rem;
   justify-content: center;
-  gap: clamp(0.5rem, 2vw, 2rem); /* Responsive gap */
-  padding: 0; /* Remove default padding */
-  list-style-type: none; /* Remove bullets */
+  gap: clamp(0.5rem, 2vw, 2rem);
+  /* Responsive gap */
+  padding: 0;
+  /* Remove default padding */
+  list-style-type: none;
+  /* Remove bullets */
 }
 
 .skills-card {
@@ -214,11 +230,14 @@ body::before {
   color: #0b1215;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: clamp(10px, 3vw, 20px); /* Responsive padding */
+  padding: clamp(10px, 3vw, 20px);
+  /* Responsive padding */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: clamp(100px, 15vw, 15.5rem); /* Responsive width */
-  height: clamp(120px, 18vw, 18rem); /* Responsive height */
+  width: clamp(100px, 15vw, 15.5rem);
+  /* Responsive width */
+  height: clamp(120px, 18vw, 18rem);
+  /* Responsive height */
   cursor: pointer;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -230,8 +249,10 @@ body::before {
 }
 
 .skills-logo {
-  width: clamp(3rem, 9vw, 9rem); /* Responsive logo size */
-  max-width: 80%; /* Ensure it fits within the card */
+  width: clamp(3rem, 9vw, 9rem);
+  /* Responsive logo size */
+  max-width: 80%;
+  /* Ensure it fits within the card */
   height: auto;
   /* transition: transform 0.3s ease; */
 }
@@ -241,14 +262,20 @@ body::before {
   font-weight: 700;
   color: white;
   /* transition: color 0.3s ease; */
-  font-size: clamp(0.8rem, 1vw, 1.2rem); /* Responsive font size */
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  /* Responsive font size */
   margin-top: 0.5rem;
 }
 
 /* Animation Keyframes */
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -256,6 +283,7 @@ body::before {
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -267,6 +295,7 @@ body::before {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -278,6 +307,7 @@ body::before {
     opacity: 0;
     transform: translateX(150px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -289,6 +319,7 @@ body::before {
     opacity: 0;
     transform: translateX(-150px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -296,8 +327,15 @@ body::before {
 }
 
 @keyframes cursor-blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInDown {
@@ -305,6 +343,7 @@ body::before {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -319,11 +358,13 @@ body::before {
       linear-gradient(90deg, var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size),
       linear-gradient(var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size);
   }
-  
-  #hero, #About_Section {
+
+  #hero,
+  #About_Section {
     margin-top: 2.5rem;
   }
-  .animate-btn{
+
+  .animate-btn {
     font-size: 0.8rem;
   }
 }
@@ -335,14 +376,15 @@ body::before {
       linear-gradient(90deg, var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size),
       linear-gradient(var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size);
   }
-  
+
   .name-text::after {
     right: -8px;
     width: 2px;
   }
-  
+
   .skills-card:hover {
-    transform: translateY(-10px); /* Less dramatic effect on smaller screens */
+    transform: translateY(-10px);
+    /* Less dramatic effect on smaller screens */
   }
 }
 
@@ -354,22 +396,25 @@ body::before {
       linear-gradient(var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size);
     mask: linear-gradient(-12deg, transparent 30%, white);
   }
-  
-  #hero{
+
+  #hero {
     margin-top: 6rem;
   }
 
-  
- #About_Section {
+
+  #About_Section {
     margin-top: 2rem;
   }
-  
+
   .about-head-text {
-    text-align: center; /* Center on mobile */
+    text-align: center;
+    /* Center on mobile */
   }
-  
-  .about-head1, .about-head2 {
-    text-align: center; /* Center on mobile */
+
+  .about-head1,
+  .about-head2 {
+    text-align: center;
+    /* Center on mobile */
     display: block;
   }
 }
@@ -381,16 +426,17 @@ body::before {
       linear-gradient(90deg, var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size),
       linear-gradient(var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size);
   }
-  
+
   .name-text::after {
     right: -6px;
     width: 2px;
   }
-  
+
   .skills-card:hover {
-    transform: translateY(-5px); /* Even less dramatic effect on very small screens */
+    transform: translateY(-5px);
+    /* Even less dramatic effect on very small screens */
   }
-  
+
   .skills-card:active {
     transform: translateY(2px);
   }
@@ -404,15 +450,15 @@ body::before {
       linear-gradient(var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size);
     mask: linear-gradient(-10deg, transparent 30%, white);
   }
-  
-  #hero{
+
+  #hero {
     margin-top: 8rem;
   }
-  
+
   #About_Section {
     margin-top: 5.5rem;
   }
-  
+
   .name-text::after {
     right: -5px;
     width: 2px;
@@ -427,25 +473,29 @@ body::before {
       linear-gradient(90deg, var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size),
       linear-gradient(var(--line) 1px, transparent 1px var(--grid-size)) 0 calc(var(--grid-size) * -0.5) / var(--grid-size) var(--grid-size);
   }
-  
-  #hero{
+
+  #hero {
     margin-top: 8rem;
   }
+
   .skills ul {
-    gap: 0.5rem; /* Smaller gap on tiny screens */
+    gap: 0.5rem;
+    /* Smaller gap on tiny screens */
   }
-  
+
   .skills-card {
-    width: calc(50% - 1rem); /* Make cards fit two per row */
+    width: calc(50% - 1rem);
+    /* Make cards fit two per row */
     height: auto;
-    aspect-ratio: 1/1.2; /* Maintain a consistent aspect ratio */
+    aspect-ratio: 1/1.2;
+    /* Maintain a consistent aspect ratio */
     padding: 8px;
   }
-  
+
   .skills-logo {
     width: 70%;
   }
-  
+
   .skills-card h4 {
     font-size: 0.7rem;
     margin: 0.3rem 0;
@@ -468,7 +518,8 @@ body::before {
 
 .experience-head1 {
   font-weight: 800;
-  font-size: clamp(3rem, 6vw, 6rem); /* Responsive font size */
+  font-size: clamp(3rem, 6vw, 6rem);
+  /* Responsive font size */
   animation: slideInLeft 1s ease forwards;
   color: #fff;
   margin-bottom: 0;
@@ -478,7 +529,8 @@ body::before {
 .experience-head2 {
   text-align: start;
   font-weight: 800;
-  font-size: clamp(3.5rem, 5vw, 5rem); /* Responsive font size */
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  /* Responsive font size */
   animation: slideInRight 1s ease forwards;
   color: #d63384;
   margin-top: 0;
@@ -488,7 +540,8 @@ body::before {
 .experience-para {
   margin-top: 2rem;
   text-align: justify;
-  font-size: clamp(1rem, 1.2vw, 1.2rem); /* Responsive font size */
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  /* Responsive font size */
   color: #fff;
   padding: 0 0.5rem;
 }
@@ -578,56 +631,62 @@ body::before {
   .exp-container:before {
     left: 8px;
     width: 2px;
- }
-  .timeline-block {
-     width: 100%;
-     margin-bottom: 30px;
   }
+
+  .timeline-block {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
   .timeline-block-right {
-     float: none;
+    float: none;
   }
 
   .timeline-block-left {
-     float: none;
-     direction: ltr;
+    float: none;
+    direction: ltr;
   }
 }
 
 
 /* Projects_section */
 
-#Works_section{
+#Works_section {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
-.works_head{
+
+.works_head {
   font-size: 5rem;
   font-weight: 800;
   color: #fff;
 }
 
-.works_head span{
+.works_head span {
   color: #d63384;
 }
 
-.work-head{
+.work-head {
   align-items: center;
   display: flex;
   font-size: 3.5rem;
   font-weight: 800;
   color: #fff;
 }
-.work-head a{
+
+.work-head a {
   display: none;
   text-decoration: none;
   color: #fff;
   font-size: 2rem;
 }
-.work-head a:hover{
+
+.work-head a:hover {
   color: #d63384;
 
 }
-.work-para{
+
+.work-para {
   text-align: justify;
   color: #fff;
 }
@@ -643,11 +702,156 @@ body::before {
 }
 
 @media (max-width:480px) {
-  .work-head a{
+  .work-head a {
     display: block;
   }
-  
+
 }
+
+
+
+/* Testimonial Section */
+#Testimonials {
+  text-align: center;
+  margin: 2rem 0 3rem;
+}
+
+.testimonial-heading {
+  margin-bottom: 3rem;
+}
+
+.testimonial-text1,
+.testimonial-text2 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.testimonial-text1 {
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-text2 {
+  color: #d63384;
+}
+
+.testimonial-item {
+  border-radius: 20px;
+  text-align: justify;
+  background-color: #fff;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-icon1,
+.testimonial-icon2 {
+  font-size: 28px;
+  color: #d63384;
+}
+
+.testimonial-icon2 {
+  transform: rotate(180deg);
+  text-align: left;
+  display: block;
+}
+
+.author-row {
+  align-items: center;
+}
+
+.author-img {
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-author-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.testimonial-author-position {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* Media Queries */
+@media (max-width: 1199.98px) {
+  .testimonial-text1,
+  .testimonial-text2 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .testimonial-text1,
+  .testimonial-text2 {
+    font-size: 4rem;
+  }
+  
+  .testimonial-item {
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .testimonial-text1,
+  .testimonial-text2 {
+    font-size: 3.5rem;
+  }
+  
+  .testimonial-icon1,
+  .testimonial-icon2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .testimonial-text1,
+  .testimonial-text2 {
+    font-size: 3rem;
+  }
+  
+  .testimonial-author-name {
+    font-size: 1rem;
+  }
+  
+  .testimonial-author-position {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-text1,
+  .testimonial-text2 {
+    font-size: 2.5rem;
+  }
+  
+  .testimonial-item {
+    padding: 20px 15px;
+  }
+  
+  .author-img {
+    max-width: 60px;
+  }
+}
+
+@media (max-width: 375px) {
+  .testimonial-text1,
+  .testimonial-text2 {
+    font-size: 2rem;
+  }
+}
+
 
 
 
@@ -682,18 +886,20 @@ body::before {
 
 
 /* Footer Section */
-#footer{
+#footer {
   background-color: #000814;
   backdrop-filter: blur(50px);
 }
-.footer-cr{
+
+.footer-cr {
   color: #fff;
 }
 
-.footer-pb{
-  color:#fff;
+.footer-pb {
+  color: #fff;
 }
-.footer-pb a{
+
+.footer-pb a {
   text-decoration: none;
   color: #d63384;
   font-size: 1.2rem;
