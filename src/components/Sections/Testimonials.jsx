@@ -23,7 +23,7 @@ function Testimonials() {
                                 <p className="testimonial-text" data-aos="fade-up" data-aos-delay="200">
                                     Nimal is proactive in seeking feedback, open to guidance, and consistently demonstrates a desire to grow professionally. He's not only focused on his technical contributions but also values collaboration, fitting seamlessly into team projects and actively contributing in discussions. He has shown remarkable dedication and quickly adapted to our workflows and tools. He demonstrates strong foundational skills in programming and a natural problem-solving ability, often delivering clean, well-documented code.
                                 </p>
-                                <div className="testimonial-icon2" data-aos="zoom-in" data-aos-delay="300">
+                                <div className="testimonial-icon2">
                                     <i className="bi bi-quote"></i>
                                 </div>
                                 <div className="testimonial-author mt-4" data-aos="fade-up" data-aos-delay="400">
@@ -49,7 +49,7 @@ function Testimonials() {
                                 <p className="testimonial-text" data-aos="fade-up" data-aos-delay="200">
                                     Nimal Prince has been a valuable asset in developing both web and mobile applications for our projects. His dedication to clean, maintainable code and his quick adaptability have consistently impressed our team. Nimal demonstrates strong problem-solving skills and a proactive approach, making him an excellent contributor to any project. Nimal also has a keen eye for detail, ensuring that every feature is optimized for both performance and user experience. His collaborative mindset and willingness to learn make him a pleasure to work with on any development team.
                                 </p>
-                                <div className="testimonial-icon2" data-aos="zoom-in" data-aos-delay="300">
+                                <div className="testimonial-icon2">
                                     <i className="bi bi-quote"></i>
                                 </div>
                                 <div className="testimonial-author mt-4" data-aos="fade-up" data-aos-delay="400">

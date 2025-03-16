@@ -1,8 +1,7 @@
 /* Projects_section */
 
 #Works_section {
-  padding: 4rem 0;
-  background-color: var(--bg-color, #121212); /* Assuming dark background */
+  padding: 4rem 0; 
 }
 
 .container {

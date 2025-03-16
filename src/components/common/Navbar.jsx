@@ -2,41 +2,42 @@ import React, { useEffect, useState } from "react";
 // Ensure Bootstrap JavaScript components work correctly
 import("bootstrap/dist/js/bootstrap.bundle.min.js");
 import "./navbar.css";
+import logo from "../../assets/NP_logo_white.png"
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
-  
+
   useEffect(() => {
     // Import Bootstrap JS
-    
+
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
       const scrollPosition = window.scrollY;
       // Add an offset for the navbar height
       const navbarHeight = document.querySelector(".navbar").offsetHeight;
       const scrollOffset = scrollPosition + navbarHeight + 50; // Increase this value for better detection
-      
+
       let currentActive = activeSection;
-      
+
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (scrollOffset >= sectionTop && scrollOffset < sectionTop + sectionHeight) {
           currentActive = section.getAttribute("id");
         }
       });
-      
+
       if (currentActive !== activeSection) {
         setActiveSection(currentActive);
       }
     };
-      
+
     window.addEventListener("scroll", handleScroll);
-    
+
     // Trigger scroll handler once on load to set initial active state
     handleScroll();
-    
+
     // Also listen for hash changes to handle direct link clicks
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
@@ -44,9 +45,9 @@ function Navbar() {
         setActiveSection(hash);
       }
     };
-    
+
     window.addEventListener("hashchange", handleHashChange);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
@@ -61,10 +62,11 @@ function Navbar() {
   };
 
   return (
+    <section id="navbars">
     <nav className="navbar navbar-dark fixed-top custom-navbar">
       <div className="container-fluid">
         {/* Mobile: Brand on right, toggle on left */}
-        <div className="d-flex d-lg-none w-100">
+        <div className="d-flex d-lg-none w-100 ">
           <button
             className="navbar-toggler order-1"
             type="button"
@@ -75,7 +77,7 @@ function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand offcanvas-title order-2 ms-auto" href="#">
+          <a className="navbar-brand offcanvas-title order-2 ms-3" href="#">
             Nimal Prince
           </a>
         </div>
@@ -120,7 +122,7 @@ function Navbar() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              {/* <b>Nimal Prince</b> */}
+              <b>Nimal Prince</b>
             </h5>
             <button
               type="button"
@@ -161,6 +163,7 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    </section>
   );
 }
 
