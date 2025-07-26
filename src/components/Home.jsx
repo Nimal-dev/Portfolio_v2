@@ -1,4 +1,8 @@
-import React from "react";
+ 
+
+
+
+import React, { useEffect } from "react";
 import '../App.css'
 import Hero from "./Hero";
 import Navbar from "./common/Navbar";
@@ -11,21 +15,20 @@ import Footer from "./common/Footer";
 import Works from "./Sections/Works";
 import Testimonials from "./Sections/Testimonials";
 
-      
-
-
-
 function Home() {
-    AOS.init();
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <>
-        <Navbar/>,
-        <Hero/>,
-        <About/>,
-        <Skills/>,
-        <Experience/>,
-        <Works/>,
-        <Testimonials/>,
+        <Navbar/>
+        <Hero/>
+        <About/>
+        <Skills/>
+        <Experience/>
+        <Works/>
+        <Testimonials/>
         <Footer/>
         </>
     );
