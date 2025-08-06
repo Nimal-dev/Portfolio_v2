@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import profilepic from "../assets/me.png";
-import resume from "../assets/Nimal_Prince_Resume.pdf"
+import resume from "../assets/Nimal_Prince_FullStack_Developer_Resume.pdf"
 
 function Hero() {
   // Create a reference to the element where we want the typing effect

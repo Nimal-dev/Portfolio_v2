@@ -22,30 +22,227 @@
   color: #d63384;
 }
 
+/* Slider container */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  user-select: none;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Slider wrapper */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Glassmorphic project card - full width */
+.project-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-sizing: border-box;
+  user-select: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+.project-image {
+  width: 100%;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  margin: 0 0 20px 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #fff, #d63384);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  text-align: justify;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: auto;
+  color: #d63384;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #fff;
+}
+
+.project-link i {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+/* Slider dots */
+.slider-dots {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.slider-dots .dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.slider-dots .dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.slider-dots .dot.active {
+  background: #d63384;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .project-card {
+    padding: 30px;
+  }
+  
+  .project-content h3 {
+    font-size: 2rem;
+  }
+  
+  .project-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 25px;
+  }
+  
+  .project-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .project-content p {
+    font-size: 1rem;
+  }
+  
+  .works_head {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 20px;
+  }
+  
+  .project-content h3 {
+    font-size: 1.6rem;
+  }
+  
+  .project-content p {
+    font-size: 0.95rem;
+  }
+  
+  .works_head {
+    font-size: 2.5rem;
+  }
+  
+  .slider-dots .dot {
+    width: 14px;
+    height: 14px;
+    margin: 0 6px;
+  }
+}
+
+/* Legacy styles (kept for backward compatibility) */
 .project-container {
   margin: 4rem 0;
 }
 
-.project-content {
+.project-content.legacy {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
 }
 
-.project-container.reversed .project-content {
+.project-container.reversed .project-content.legacy {
   flex-direction: row-reverse;
-}
-
-.project-image {
-  flex: 1;
-  min-width: 250px;
-}
-
-.project-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project-text {
@@ -75,7 +272,7 @@
 }
 
 .work-para {
-    text-align: justify;
+  text-align: justify;
   color: #fff;
   line-height: 1.6;
   font-size: 1rem;
@@ -89,55 +286,4 @@
 .link-hover:hover {
   transform: scale(1.05);
   opacity: 0.8;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 992px) {
-  .works_head {
-    font-size: 3rem;
-  }
-  
-  .work-head {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .project-content {
-    flex-direction: column !important;
-  }
-  
-  .project-image, .project-text {
-    width: 100%;
-  }
-  
-  .works_head {
-    font-size: 2.8rem;
-  }
-  
-  .work-head {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .works_head {
-    font-size: 2.5rem;
-  }
-  
-  .work-head {
-    font-size: 1.8rem;
-  }
-  
-  .work-para {
-    font-size: 0.95rem;
-  }
-  
-  #Works_section {
-    padding: 2rem 0;
-  }
-  
-  .project-container {
-    margin: 2.5rem 0;
-  }
 }
