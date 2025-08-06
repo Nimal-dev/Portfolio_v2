@@ -110,7 +110,7 @@ function Works() {
     const startAutoScroll = () => {
         autoScrollRef.current = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-        }, 4000);
+        }, 2000);
     };
 
     const stopAutoScroll = () => {
