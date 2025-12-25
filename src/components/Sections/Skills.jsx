@@ -12,10 +12,7 @@ import git from "../../assets/Skills/git.png"
 import github from "../../assets/Skills/github.png"
 import js from "../../assets/Skills/js.png"
 import mongodb from "../../assets/Skills/mongodb.png"
-import mysql from "../../assets/Skills/mysql.png"
 import nodejs from "../../assets/Skills/nodejs.png"
-import sqllite from "../../assets/Skills/sqllite.png"
-import django from "../../assets/Skills/django.png"
 import arduino from "../../assets/Skills/arduino.png"
 
 
@@ -74,20 +71,6 @@ function Skills() {
                                 <li className="skills-card" data-aos="fade-down">
                                     <h4>Flutter</h4>
                                     <img src={flutter} className="skills-logo" alt="Flutter" />
-                                </li>
-
-                                <li className="skills-card" data-aos="fade-down">
-                                    <h4>MySQL</h4>
-                                    <img src={mysql} className="skills-logo" alt="MySQL" />
-                                </li>
-
-                                <li className="skills-card" data-aos="fade-down">
-                                    <h4>SQLite</h4>
-                                    <img src={sqllite} className="skills-logo" alt="SQLite" />
-                                </li>
-                                <li className="skills-card" data-aos="fade-down">
-                                    <h4>Django</h4>
-                                    <img src={django} className="skills-logo" alt="Django" />
                                 </li>
                                 <li className="skills-card" data-aos="fade-down">
                                     <h4>Arduino</h4>
