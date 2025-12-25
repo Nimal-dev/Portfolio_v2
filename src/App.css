@@ -9,9 +9,28 @@ body {
   font-size: 16px;
   /* Base font size for better scaling */
 }
-html{
-  overflow-x: hidden;
+
+html.lenis,
+html.lenis body {
+  height: auto;
 }
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 
 body::before {
   --line: hsl(0 0% 95% / 0.25);
@@ -27,8 +46,10 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1; /* Ensure this is below the navbar */
-  pointer-events: none; /* Ensure it doesn't interfere with clicks */
+  z-index: -1;
+  /* Ensure this is below the navbar */
+  pointer-events: none;
+  /* Ensure it doesn't interfere with clicks */
 }
 
 /* Hero Section */
@@ -226,22 +247,31 @@ body::before {
   list-style-type: none;
   /* Remove bullets */
 }
+
 .skills-card {
   align-self: center;
   margin-top: 1.5rem;
-  background: rgba(255, 255, 255, 0.088); /* Increased transparency */
-  backdrop-filter: blur(5px); /* Stronger blur for better glass effect */
+  background: rgba(255, 255, 255, 0.088);
+  /* Increased transparency */
+  backdrop-filter: blur(5px);
+  /* Stronger blur for better glass effect */
   -webkit-backdrop-filter: blur(25px);
   color: #0b1215;
-  border-radius: 15px; /* Slightly more rounded corners */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Softer and more diffused shadow */
-  padding: clamp(10px, 3vw, 20px); /* Responsive padding */
+  border-radius: 15px;
+  /* Slightly more rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  /* Softer and more diffused shadow */
+  padding: clamp(10px, 3vw, 20px);
+  /* Responsive padding */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: clamp(120px, 16vw, 16rem); /* Responsive width */
-  height: clamp(140px, 20vw, 20rem); /* Responsive height */
+  width: clamp(120px, 16vw, 16rem);
+  /* Responsive width */
+  height: clamp(140px, 20vw, 20rem);
+  /* Responsive height */
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly brighter border */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* Slightly brighter border */
   display: flex;
   flex-direction: column;
   justify-content: center;

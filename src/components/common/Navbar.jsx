@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 // Ensure Bootstrap JavaScript components work correctly
 import("bootstrap/dist/js/bootstrap.bundle.min.js");
 import "./navbar.css";
-import logo from "../../assets/NP_logo_white.png"
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -63,106 +62,106 @@ function Navbar() {
 
   return (
     <section id="navbars">
-    <nav className="navbar navbar-dark fixed-top custom-navbar">
-      <div className="container-fluid">
-        {/* Mobile: Brand on right, toggle on left */}
-        <div className="d-flex d-lg-none w-100 ">
-          <button
-            className="navbar-toggler order-1"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand offcanvas-title order-2 ms-3" href="#">
-            Nimal Prince
-          </a>
-        </div>
-
-        {/* Desktop: Centered content */}
-        <div className="d-none d-lg-flex justify-content-center w-100">
-          <ul className="navbar-nav d-flex flex-row">
-            <li className="nav-item mx-3">
-              <a className={`nav-link ${activeSection === "hero" ? "active" : ""}`} aria-current="page" href="#hero">
-                Home
-              </a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className={`nav-link ${activeSection === "About_Section" ? "active" : ""}`} href="#About_Section">
-                About
-              </a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className={`nav-link ${activeSection === "Skills_Section" ? "active" : ""}`} href="#Skills_Section">
-                Skills
-              </a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className={`nav-link ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section">
-                Experience
-              </a>
-            </li>
-            <li className="nav-item mx-3">
-              <a className={`nav-link ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section">
-                Works
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Glassmorphic offcanvas for mobile */}
-        <div
-          className="offcanvas offcanvas-start glassmorphic offcanvas-fullwidth"
-          tabIndex="-1"
-          id="offcanvasDarkNavbar"
-          aria-labelledby="offcanvasDarkNavbarLabel"
-        >
-          <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              <b>Nimal Prince</b>
-            </h5>
+      <nav className="navbar navbar-dark fixed-top custom-navbar">
+        <div className="container-fluid">
+          {/* Mobile: Brand on right, toggle on left */}
+          <div className="d-flex d-lg-none w-100 ">
             <button
+              className="navbar-toggler order-1"
               type="button"
-              className="btn-close btn-close-white"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasDarkNavbar"
+              aria-controls="offcanvasDarkNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <a className="navbar-brand offcanvas-title order-2 ms-3" href="#">
+              Nimal Prince
+            </a>
           </div>
-          <div className="offcanvas-body d-flex align-items-center justify-content-center">
-            <ul className="navbar-nav text-center">
-              <li className="nav-item mb-4">
-                <a className={`nav-link fs-1 ${activeSection === "hero" ? "active" : ""}`} aria-current="page" href="#hero" onClick={closeOffcanvas}>
+
+          {/* Desktop: Centered content */}
+          <div className="d-none d-lg-flex justify-content-center w-100">
+            <ul className="navbar-nav d-flex flex-row">
+              <li className="nav-item mx-3">
+                <a className={`nav-link ${activeSection === "hero" ? "active" : ""}`} aria-current="page" href="#hero">
                   Home
                 </a>
               </li>
-              <li className="nav-item mb-4">
-                <a className={`nav-link fs-1 ${activeSection === "About_Section" ? "active" : ""}`} href="#About_Section" onClick={closeOffcanvas}>
+              <li className="nav-item mx-3">
+                <a className={`nav-link ${activeSection === "About_Section" ? "active" : ""}`} href="#About_Section">
                   About
                 </a>
               </li>
-              <li className="nav-item mb-4">
-                <a className={`nav-link fs-1 ${activeSection === "Skills_Section" ? "active" : ""}`} href="#Skills_Section" onClick={closeOffcanvas}>
+              <li className="nav-item mx-3">
+                <a className={`nav-link ${activeSection === "Skills_Section" ? "active" : ""}`} href="#Skills_Section">
                   Skills
                 </a>
               </li>
-              <li className="nav-item mb-4">
-                <a className={`nav-link fs-1 ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section" onClick={closeOffcanvas}>
+              <li className="nav-item mx-3">
+                <a className={`nav-link ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section">
                   Experience
                 </a>
               </li>
-              <li className="nav-item mb-4">
-                <a className={`nav-link fs-1 ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section" onClick={closeOffcanvas}>
+              <li className="nav-item mx-3">
+                <a className={`nav-link ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section">
                   Works
                 </a>
               </li>
             </ul>
           </div>
+
+          {/* Glassmorphic offcanvas for mobile */}
+          <div
+            className="offcanvas offcanvas-start glassmorphic offcanvas-fullwidth"
+            tabIndex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <b>Nimal Prince</b>
+              </h5>
+              <button
+                type="button"
+                className="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body d-flex align-items-center justify-content-center">
+              <ul className="navbar-nav text-center">
+                <li className="nav-item mb-4">
+                  <a className={`nav-link fs-1 ${activeSection === "hero" ? "active" : ""}`} aria-current="page" href="#hero" onClick={closeOffcanvas}>
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item mb-4">
+                  <a className={`nav-link fs-1 ${activeSection === "About_Section" ? "active" : ""}`} href="#About_Section" onClick={closeOffcanvas}>
+                    About
+                  </a>
+                </li>
+                <li className="nav-item mb-4">
+                  <a className={`nav-link fs-1 ${activeSection === "Skills_Section" ? "active" : ""}`} href="#Skills_Section" onClick={closeOffcanvas}>
+                    Skills
+                  </a>
+                </li>
+                <li className="nav-item mb-4">
+                  <a className={`nav-link fs-1 ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section" onClick={closeOffcanvas}>
+                    Experience
+                  </a>
+                </li>
+                <li className="nav-item mb-4">
+                  <a className={`nav-link fs-1 ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section" onClick={closeOffcanvas}>
+                    Works
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </section>
   );
 }
