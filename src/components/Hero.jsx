@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import profilepic from "../assets/me.png";
 import resume from "../assets/Nimal_Prince_FullStack_Developer_Resume.pdf"
+import ImageWithSkeleton from "./common/ImageWithSkeleton";
 
 function Hero() {
   // Create a reference to the element where we want the typing effect
@@ -50,7 +51,15 @@ function Hero() {
               <a href={resume} target="_blank" className="btn animate-btn">Download Resume</a>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 profile_col">
-              <img className="img-fluid profilepic" src={profilepic} alt="Profile_Pic" />
+              <ImageWithSkeleton
+                className="img-fluid profilepic"
+                src={profilepic}
+                alt="Profile_Pic"
+                skeletonHeight="400px"
+                skeletonVariant="rect"
+                wrapperStyle={{ width: '100%' }}
+                skeletonClassName="rounded-3"
+              />
             </div>
           </div>
         </div>

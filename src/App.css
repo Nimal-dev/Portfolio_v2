@@ -224,78 +224,7 @@ body::before {
   animation: slideUp 1s ease forwards;
 }
 
-/* Skills Section */
-.skill-text {
-  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
-  /* Responsive font size */
-  font-weight: 800;
-  color: #fff;
-  /* animation: fadeInDown 1s ease-in-out;SS */
-  text-align: center;
-  /* Center on mobile */
-}
-
-.skills ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  justify-content: center;
-  gap: clamp(0.5rem, 2vw, 2rem);
-  /* Responsive gap */
-  padding: 0;
-  /* Remove default padding */
-  list-style-type: none;
-  /* Remove bullets */
-}
-
-.skills-card {
-  align-self: center;
-  margin-top: 1.5rem;
-  background: rgba(255, 255, 255, 0.088);
-  /* Increased transparency */
-  backdrop-filter: blur(5px);
-  /* Stronger blur for better glass effect */
-  -webkit-backdrop-filter: blur(25px);
-  color: #0b1215;
-  border-radius: 15px;
-  /* Slightly more rounded corners */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  /* Softer and more diffused shadow */
-  padding: clamp(10px, 3vw, 20px);
-  /* Responsive padding */
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: clamp(120px, 16vw, 16rem);
-  /* Responsive width */
-  height: clamp(140px, 20vw, 20rem);
-  /* Responsive height */
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  /* Slightly brighter border */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.skills-logo {
-  width: clamp(3rem, 9vw, 9rem);
-  /* Responsive logo size */
-  max-width: 80%;
-  /* Ensure it fits within the card */
-  height: auto;
-  /* transition: transform 0.3s ease; */
-}
-
-.skills-card h4 {
-  padding-bottom: 0.5rem;
-  font-weight: 700;
-  color: white;
-  /* transition: color 0.3s ease; */
-  font-size: clamp(0.8rem, 1vw, 1.2rem);
-  /* Responsive font size */
-  margin-top: 0.5rem;
-}
+/* Skills Section styles moved to skills.css */
 
 /* Animation Keyframes */
 @keyframes fadeIn {

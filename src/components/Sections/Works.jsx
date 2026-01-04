@@ -9,6 +9,7 @@ import gm from "../../assets/gmgroups.png";
 import ektha from "../../assets/ektha.png";
 import auction from "../../assets/auction.png";
 import Donation from "../../assets/Donation.png";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 function Works() {
     const projects = [
@@ -71,7 +72,13 @@ function Works() {
                         <SwiperSlide key={project.id} className="swiper-slide-custom">
                             <div className="project-card glassmorphic">
                                 <div className="project-image">
-                                    <img src={project.image} alt={project.title} loading="lazy" />
+                                    <ImageWithSkeleton
+                                        src={project.image}
+                                        alt={project.title}
+                                        loading="lazy"
+                                        skeletonHeight="220px"
+                                        wrapperStyle={{ width: '100%', height: '100%' }}
+                                    />
                                 </div>
                                 <div className="project-content">
                                     <h3>{project.title}</h3>

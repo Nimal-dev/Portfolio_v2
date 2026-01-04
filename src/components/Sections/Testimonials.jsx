@@ -2,6 +2,7 @@ import React from "react";
 import "../Sections/testimonials.css"
 import TL from "../../assets/TL.jpg";
 import DC from "../../assets/PC.jpg";
+import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 function Testimonials() {
     return (
@@ -12,7 +13,7 @@ function Testimonials() {
                         <span className="testimonial-text1">Testi</span>
                         <span className="testimonial-text2">monials</span>
                     </h2>
-                    
+
                     <div className="row gy-4 justify-content-center">
                         {/* Testimonial 1 */}
                         <div className="col-12 col-md-6 col-lg-5" data-aos="fade-right" data-aos-delay="100">
@@ -29,7 +30,7 @@ function Testimonials() {
                                 <div className="testimonial-author mt-4" data-aos="fade-up" data-aos-delay="400">
                                     <div className="row author-row">
                                         <div className="col-3 col-md-3 col-lg-2">
-                                            <img className="img-fluid author-img" src={TL} alt="Team Lead" />
+                                            <ImageWithSkeleton className="img-fluid author-img" src={TL} alt="Team Lead" skeletonVariant="circle" skeletonWidth="70px" skeletonHeight="70px" />
                                         </div>
                                         <div className="col-9 col-md-9 col-lg-10 text-start">
                                             <h5 className="testimonial-author-name mb-1">Muhammed Aslam</h5>
@@ -39,7 +40,7 @@ function Testimonials() {
                                 </div>
                             </div>
                         </div>
-                        
+
                         {/* Testimonial 2 */}
                         <div className="col-12 col-md-6 col-lg-5" data-aos="fade-left" data-aos-delay="100">
                             <div className="testimonial-item h-100 shadow-sm">
@@ -55,7 +56,7 @@ function Testimonials() {
                                 <div className="testimonial-author mt-4" data-aos="fade-up" data-aos-delay="400">
                                     <div className="row author-row">
                                         <div className="col-3 col-md-3 col-lg-2">
-                                            <img className="img-fluid author-img" src={DC} alt="Team Lead" />
+                                            <ImageWithSkeleton className="img-fluid author-img" src={DC} alt="Team Lead" skeletonVariant="circle" skeletonWidth="70px" skeletonHeight="70px" />
                                         </div>
                                         <div className="col-9 col-md-9 col-lg-10 text-start">
                                             <h5 className="testimonial-author-name mb-1">Apsara Raj</h5>
