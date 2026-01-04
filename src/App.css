@@ -110,37 +110,70 @@ body::before {
 }
 
 .profile_col {
-  background-color: #fff;
-  text-align: start;
-  border-radius: 30% 30% 20% 20%;
+  /* Minimalist Gradient Background */
+  background: transparent;
+  text-align: center;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
   transform: translateY(20px);
   opacity: 0;
   animation: profileAppear 1.2s ease forwards;
   animation-delay: 1s;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Large diffuse gradient blob behind the image */
+.profile_col::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  /* Large relative to container */
+  height: 120%;
+  max-width: 500px;
+  max-height: 500px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.15) 0%, rgba(214, 51, 132, 0.1) 40%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  border-radius: 50%;
   transition: all 0.5s ease;
-  max-width: 100%;
-  /* Ensure it doesn't overflow on small screens */
-  margin: 0 auto;
-  /* Center it on smaller screens */
+}
+
+.profile_col:hover::before {
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.2) 0%, rgba(214, 51, 132, 0.15) 50%, transparent 70%);
 }
 
 .profile_col:hover {
-  transform: translateY(0) scale(1.03);
-  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+  transform: translateY(0);
+  /* No scale or shadow on container */
 }
 
 .profilepic {
-  transform: rotateY(180deg);
-  filter: grayscale(100%);
-  transition: filter 0.5s ease;
+  /* transform: rotateY(180deg); */
+  /* Keep original flip */
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  /* Subtle shadow for depth */
+  transition: transform 0.5s ease, filter 0.5s ease;
   max-width: 100%;
-  /* Ensure image is responsive */
   height: auto;
+  border-radius: 0;
+  /* Ensure no radius on image if it was set */
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 .profile_col:hover .profilepic {
-  filter: grayscale(70%);
+  /* transform: rotateY(180deg) scale(1.02); */
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }
 
 .role-text {
