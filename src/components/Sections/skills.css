@@ -43,13 +43,14 @@
 .skill-text span {
     background: linear-gradient(to right, #fff, #b3b3b3);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 2rem;
     padding: 1rem;
     perspective: 1000px;
@@ -160,5 +161,7 @@
 @media (max-width: 576px) {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0.5rem;
     }
 }
