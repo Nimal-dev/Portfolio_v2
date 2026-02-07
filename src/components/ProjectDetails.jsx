@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projectsData';
-import Navbar from './common/Navbar';
 import Footer from './common/Footer';
 import './project-details.css';
 
@@ -28,7 +27,6 @@ const ProjectDetails = () => {
 
     return (
         <>
-            <Navbar />
             <div className="project-details-page">
                 <div className="container">
                     <button onClick={() => navigate('/projectspage')} className="btn-back">
