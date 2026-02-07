@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lenis from 'lenis'
-import LoadingScreen from "./components/common/LoadingScreen";
 import './App.css'
 import Home from "./components/Home";
+import ProjectsPage from "./components/ProjectsPage";
+import ProjectDetails from "./components/ProjectDetails";
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Initialize Lenis
@@ -36,20 +36,15 @@ function App() {
     };
   }, []);
 
-  const handleLoadingComplete = () => {
-    setLoading(false);
-  };
-
   return (
     <>
-      {loading && <LoadingScreen onComplete={handleLoadingComplete} />}
-      {!loading && (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </BrowserRouter>
-      )}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projectspage" element={<ProjectsPage />} />
+          <Route path="/projectspage/:id" element={<ProjectDetails />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
