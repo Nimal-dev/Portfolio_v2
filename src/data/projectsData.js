@@ -36,5 +36,26 @@ export const projects = [
             "Export to SVG/PNG."
         ],
         price: "Contact for Pricing"
+    },
+    {
+        id: "schoolmart",
+        title: "SchoolMart",
+        description: "A comprehensive e-commerce and management platform connecting student innovation with the market.",
+        fullDescription: "The SchoolMart is a comprehensive web-based solution developed using the MERN stack (MongoDB, Express.js, React, Node.js) to streamline the procurement and management of nutritional supplies for schools. The system addresses the logistical challenges of food distribution by creating a digital marketplace that connects schools directly with verified local food and market vendors. Key functionalities include role-based authentication for Administrators, Schools, and Vendors. Schools can manage student data, track dietary requirements, and browse a real-time marketplace to order essential supplies (grains, vegetables, fruits) from registered vendors. Vendors utilize a dedicated dashboard to manage inventory, update prices with detailed unit descriptions (e.g., kg, liter), and process incoming orders with status tracking (Pending, Packed, Delivered). The platform ensures transparency and accountability through a central Admin module that oversees all transactions, user management, and system activities. Integrated payment processing facilitates secure financial transactions, ensuring timely procurement of quality nutrition for students. This digitization replaces manual workflows, reduces inefficiencies, and ensures a consistent supply of healthy food to educational institutions.",
+        image: "/projects/schoolmart/homepage.png",
+        gallery: [
+            "/projects/schoolmart/marketplace.png",
+            "/projects/schoolmart/dashboard.png",
+            "/projects/schoolmart/login.png"
+        ],
+        techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "Razorpay"],
+        features: [
+            "Dual-Interface System: Marketplace for students & Admin Dashboard for staff.",
+            "Secure Payments: Integrated with Razorpay for safe transactions.",
+            "Real-time Order Tracking: Students and admins can track order status.",
+            "Role-Based Access Control: Distinct features for Students, Staff, and Admins.",
+            "Inventory Management: Efficiently manage school project stocks."
+        ],
+        price: "Contact for Pricing"
     }
 ];
