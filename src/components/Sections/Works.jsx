@@ -7,8 +7,9 @@ import "swiper/css/pagination";
 import "../Sections/works.css";
 import gm from "../../assets/gmgroups.png";
 import ektha from "../../assets/ektha.png";
-import auction from "../../assets/auction.png";
-import Donation from "../../assets/Donation.png";
+import Trancefit from "../../assets/Trancefit.png";
+import Ultimate from "../../assets/Ultimate.png";
+import UltimateApp from "../../assets/mobile.png";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
 
 function Works() {
@@ -18,7 +19,7 @@ function Works() {
             title: "GM Groups Club",
             image: gm,
             description: "Developed a dynamic and visually engaging website for GM Groups, a private club that owns and operates the popular Burgershot business. The website showcases the club’s identity, investor collaborations (e.g., with Tokyo Family), business ventures, and announcements.",
-            link: "https://gmgroups.netlify.app/",
+            link: "https://gmgroups.site/",
         },
         {
             id: 2,
@@ -29,17 +30,26 @@ function Works() {
         },
         {
             id: 3,
-            title: "BidMaster",
-            image: auction,
-            description: "BidMaster is a comprehensive online auction system developed with the MERN stack, enabling secure real-time bidding across various product categories. The responsive platform features a dynamic dashboard where users can track active auctions, place bids, and receive instant notifications.",
-            link: "#",
+            title: "Trancefit Gym",
+            image: Trancefit,
+            description: "Created a static highly responsive interactive website for the trancefit gym to showcase themselves for the internet.",
+            link: "https://trancefit.netlify.app/",
         },
         {
             id: 4,
-            title: "Compassion Link",
-            image: Donation,
-            description: "Compassion Link is a versatile donation platform built with the MERN stack that facilitates both monetary and non-monetary contributions to causes worldwide. The responsive website features an intuitive dashboard where donors can browse campaigns by category.",
-            link: "#",
+            title: "Ultimate Fitness Point",
+            image: Ultimate,
+            description: "Ultimate fitness point is a dynamic gym website to showcase their gym in the internet and a management system to manage their gym members, classes, and payments.",
+            link: "https://ultimatefitnesspoint.netlify.app/",
+
+        },
+        {
+            id: 5,
+            title: "Ultimate Fitness App",
+            image: UltimateApp,
+            description: "Ultimate fitness app is a gym management system that helps gym owners to manage their gym members, classes, and payments. The responsive site features an interactive event schedule that allows visitors to browse through workshops, hackathons, and cultural performances.",
+            link: "https://ultimatefitnesspoint.netlify.app/login",
+
         }
     ];
 
