@@ -1,70 +1,105 @@
-import React, { useEffect, useRef } from "react";
-import Typed from "typed.js";
-import profilepic from "../assets/me.png";
-import resume from "../assets/Nimal_Prince_FullStack_Developer_Resume.pdf"
+import React, { Suspense, lazy } from "react";
+import { motion as Motion } from "framer-motion";
+import { profile } from "../data/portfolioData";
 import ImageWithSkeleton from "./common/ImageWithSkeleton";
 
+const GlassHeroScene = lazy(() => import("./GlassHeroScene"));
+
+const fadeUp = {
+  hidden: { opacity: 0, scale: 0.98 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 function Hero() {
-  // Create a reference to the element where we want the typing effect
-  const typedElementRef = useRef(null);
-
-  useEffect(() => {
-    // Initialize Typed.js
-    const typed = new Typed(typedElementRef.current, {
-      strings: ["Junior Developer"],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 1500,
-      startDelay: 500,
-      loop: false
-    });
-
-    // Clean up Typed instance on component unmount
-    return () => {
-      typed.destroy();
-    };
-  }, []); // Empty dependency array means this effect runs once on mount
-
   return (
-    <>
-      <section id="hero">
-        <div className="container-lg hero_container">
-          <div className="row intro">
-            <div className="col-lg-8 col-md-8 col-sm-12 text-start align-items-center">
-              <span className="head-text-1">Hello!, </span>
-              <span className="head-text-2">I'm</span>
-              <h1 className="name-text">Nimal Prince</h1>
-              <h3 className="role-text">
-                <span>I'm a <code><span className="role" ref={typedElementRef}></span></code></span>
-              </h3>
-              <div className="social-icons">
-                <a href="https://www.linkedin.com/in/nimalprince" className="animate-icon linkedin" target="_blank">
-                  <i className="bi bi-linkedin"></i>
-                </a>
-                <a href="https://github.com/Nimal-dev" className="animate-icon github" target="_blank">
-                  <i className="bi bi-github"></i>
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nimalprince.dev@gmail.com" className="animate-icon google" target="_blank">
-                  <i className="bi bi-envelope-fill"></i>
-                </a>
-              </div>
-              <a href={resume} target="_blank" className="btn animate-btn">Download Resume</a>
-            </div>
-            <div className="col-lg-4 col-md-4 col-sm-12 profile_col">
-              <ImageWithSkeleton
-                className="img-fluid profilepic"
-                src={profilepic}
-                alt="Profile_Pic"
-                skeletonHeight="400px"
-                skeletonVariant="rect"
-                wrapperStyle={{ width: '100%' }}
-                skeletonClassName="rounded-3"
-              />
+    <section id="hero" className="hero-section">
+      <div className="hero-aurora hero-aurora-one" />
+      <div className="hero-aurora hero-aurora-two" />
+
+      <div className="container hero-layout">
+        <Motion.div
+          className="hero-copy"
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.12, delayChildren: 0.15 }}
+        >
+          <Motion.p className="section-kicker" variants={fadeUp}>
+            {profile.eyebrow}
+          </Motion.p>
+
+          <Motion.h1 className="hero-title" variants={fadeUp}>
+            {profile.title}
+          </Motion.h1>
+
+          <Motion.p className="hero-summary" variants={fadeUp}>
+            {profile.summary}
+          </Motion.p>
+
+          <Motion.div className="hero-role-strip" variants={fadeUp}>
+            {profile.roleHighlights.map((role) => (
+              <span key={role}>{role}</span>
+            ))}
+          </Motion.div>
+
+          <Motion.div className="hero-actions" variants={fadeUp}>
+            <a className="btn-primary-glass" href="#projects">
+              View Projects
+              <i className="bi bi-arrow-down-right" />
+            </a>
+            <a className="btn-secondary-glass" href={profile.resume} target="_blank" rel="noreferrer">
+              Resume
+              <i className="bi bi-file-earmark-person" />
+            </a>
+          </Motion.div>
+
+          <Motion.div className="hero-socials" variants={fadeUp} aria-label="Social links">
+            {profile.socials.map((social) => (
+              <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}>
+                <i className={social.icon} />
+              </a>
+            ))}
+          </Motion.div>
+        </Motion.div>
+
+        <Motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: [0.21, 1, 0.36, 1], delay: 0.2 }}
+        >
+          <Suspense fallback={<div className="hero-scene hero-scene-fallback" />}>
+            <GlassHeroScene />
+          </Suspense>
+
+          <div className="hero-profile-card glass-panel">
+            <ImageWithSkeleton
+              className="hero-avatar"
+              src={profile.image}
+              alt={`${profile.name} portrait`}
+              skeletonHeight="118px"
+              skeletonWidth="118px"
+              skeletonVariant="circle"
+              wrapperClassName="hero-avatar-wrapper"
+              wrapperStyle={{ width: "118px", height: "118px" }}
+            />
+            <div>
+              <p className="hero-profile-label">Available for</p>
+              <h2>{profile.shortTitle}</h2>
+              <span>{profile.location}</span>
             </div>
           </div>
-        </div>
-      </section>
-    </>
+
+          <div className="hero-metrics glass-panel">
+            {profile.metrics.map((metric) => (
+              <div key={metric.label}>
+                <strong>{metric.value}</strong>
+                <span>{metric.label}</span>
+              </div>
+            ))}
+          </div>
+        </Motion.div>
+      </div>
+    </section>
   );
 }
 

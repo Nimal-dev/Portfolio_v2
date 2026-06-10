@@ -1,168 +1,83 @@
 import React, { useEffect, useState } from "react";
-// Ensure Bootstrap JavaScript components work correctly
-import("bootstrap/dist/js/bootstrap.bundle.min.js");
+import { Link, useLocation } from "react-router-dom";
+import { navLinks, profile } from "../../data/portfolioData";
 import "./navbar.css";
 
 function Navbar() {
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("hero");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Import Bootstrap JS
-
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      const scrollPosition = window.scrollY;
-      // Add an offset for the navbar height
-      const navbarHeight = document.querySelector(".navbar").offsetHeight;
-      const scrollOffset = scrollPosition + navbarHeight + 50; // Increase this value for better detection
-
-      let currentActive = activeSection;
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (scrollOffset >= sectionTop && scrollOffset < sectionTop + sectionHeight) {
-          currentActive = section.getAttribute("id");
-        }
-      });
-
-      if (currentActive !== activeSection) {
-        setActiveSection(currentActive);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Trigger scroll handler once on load to set initial active state
-    handleScroll();
-
-    // Also listen for hash changes to handle direct link clicks
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace("#", "");
-      if (hash) {
-        setActiveSection(hash);
-      }
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
-
-  const closeOffcanvas = () => {
-    const closeButton = document.querySelector(".btn-close[data-bs-dismiss='offcanvas']");
-    if (closeButton) {
-      closeButton.click(); // Simulate clicking the close button
+    if (location.pathname !== "/") {
+      setActiveSection("projects");
+      return undefined;
     }
-  };
+
+    const sections = navLinks
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const activeEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (activeEntry) {
+          setActiveSection(activeEntry.target.id);
+        }
+      },
+      { rootMargin: "-25% 0px -55% 0px", threshold: [0.15, 0.35, 0.6] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  const getHref = (id) => (location.pathname === "/" ? `#${id}` : `/#${id}`);
 
   return (
-    <section id="navbars">
-      <nav className="navbar navbar-dark fixed-top custom-navbar">
-        <div className="container-fluid">
-          {/* Mobile: Brand on right, toggle on left */}
-          <div className="d-flex d-lg-none w-100 ">
-            <button
-              className="navbar-toggler order-1"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasDarkNavbar"
-              aria-controls="offcanvasDarkNavbar"
-              aria-label="Toggle navigation"
+    <header className="nav-shell">
+      <nav className="glass-nav" aria-label="Primary navigation">
+        <Link className="nav-brand" to="/">
+          <span>NP</span>
+          {profile.name}
+        </Link>
+
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((isOpen) => !isOpen)}
+        >
+          <span />
+          <span />
+        </button>
+
+        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={getHref(link.id)}
+              className={activeSection === link.id ? "active" : ""}
+              onClick={() => setMenuOpen(false)}
             >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <a className="navbar-brand offcanvas-title order-2 ms-3" href="#">
-              Nimal Prince
+              {link.label}
             </a>
-          </div>
-
-          {/* Desktop: Centered content */}
-          <div className="d-none d-lg-flex justify-content-center w-100">
-            <ul className="navbar-nav d-flex flex-row">
-              <li className="nav-item mx-3">
-                <a className={`nav-link ${activeSection === "hero" ? "active" : ""}`} aria-current="page" href="#hero">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mx-3">
-                <a className={`nav-link ${activeSection === "About_Section" ? "active" : ""}`} href="#About_Section">
-                  About
-                </a>
-              </li>
-              <li className="nav-item mx-3">
-                <a className={`nav-link ${activeSection === "Skills_Section" ? "active" : ""}`} href="#Skills_Section">
-                  Skills
-                </a>
-              </li>
-              <li className="nav-item mx-3">
-                <a className={`nav-link ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section">
-                  Experience
-                </a>
-              </li>
-              <li className="nav-item mx-3">
-                <a className={`nav-link ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section">
-                  Works
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Glassmorphic offcanvas for mobile */}
-          <div
-            className="offcanvas offcanvas-start glassmorphic offcanvas-fullwidth"
-            tabIndex="-1"
-            id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel"
-          >
-            <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                <b>Nimal Prince</b>
-              </h5>
-              <button
-                type="button"
-                className="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="offcanvas-body d-flex align-items-center justify-content-center">
-              <ul className="navbar-nav text-center">
-                <li className="nav-item mb-4">
-                  <a className={`nav-link fs-1 ${activeSection === "hero" ? "active" : ""}`} aria-current="page" href="#hero" onClick={closeOffcanvas}>
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item mb-4">
-                  <a className={`nav-link fs-1 ${activeSection === "About_Section" ? "active" : ""}`} href="#About_Section" onClick={closeOffcanvas}>
-                    About
-                  </a>
-                </li>
-                <li className="nav-item mb-4">
-                  <a className={`nav-link fs-1 ${activeSection === "Skills_Section" ? "active" : ""}`} href="#Skills_Section" onClick={closeOffcanvas}>
-                    Skills
-                  </a>
-                </li>
-                <li className="nav-item mb-4">
-                  <a className={`nav-link fs-1 ${activeSection === "experience_section" ? "active" : ""}`} href="#experience_section" onClick={closeOffcanvas}>
-                    Experience
-                  </a>
-                </li>
-                <li className="nav-item mb-4">
-                  <a className={`nav-link fs-1 ${activeSection === "Works_section" ? "active" : ""}`} href="#Works_section" onClick={closeOffcanvas}>
-                    Works
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          ))}
+          <Link className="nav-projects-link" to="/projectspage" onClick={() => setMenuOpen(false)}>
+            Project Index
+          </Link>
         </div>
       </nav>
-    </section>
+    </header>
   );
 }
 

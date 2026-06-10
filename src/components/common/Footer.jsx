@@ -1,24 +1,39 @@
 import React from "react";
-
-
+import { profile } from "../../data/portfolioData";
 
 function Footer() {
-    return(
-        <>
-         {/* <!-- Footer --> */}
-        <footer id="footer">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-8 mx-auto text-center mb-3">
-                        <p className="mb-2 footer-cr"><strong>Copyright</strong> 2025 All rights
-                        reserved.</p>
-                        <p className="mb-0 footer-pb">Portfolio by <a href="#">Nimal Prince</a></p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        </>
-    )
-    
+  return (
+    <footer id="footer" className="site-footer">
+      <div className="container footer-inner glass-panel">
+        <div>
+          <p className="section-kicker">Let us build something polished.</p>
+          <h2>Available for full-stack, frontend, and mobile-focused roles.</h2>
+        </div>
+
+        <div className="footer-actions">
+          <a className="btn-primary-glass" href={`mailto:${profile.email}`}>
+            Contact Me
+            <i className="bi bi-envelope-fill" />
+          </a>
+          <a className="btn-secondary-glass" href={profile.resume} target="_blank" rel="noreferrer">
+            Resume
+            <i className="bi bi-file-earmark-person" />
+          </a>
+        </div>
+
+        <div className="footer-bottom">
+          <span>Copyright {new Date().getFullYear()} {profile.name}. All rights reserved.</span>
+          <div>
+            {profile.socials.map((social) => (
+              <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}>
+                <i className={social.icon} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
+
 export default Footer;

@@ -1,118 +1,120 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { motion as Motion, useScroll, useTransform } from "framer-motion";
 import "../Sections/works.css";
-import gm from "../../assets/gmgroups.png";
-import ektha from "../../assets/ektha.png";
-import Trancefit from "../../assets/Trancefit.png";
-import Ultimate from "../../assets/Ultimate.png";
-import UltimateApp from "../../assets/mobile.png";
 import ImageWithSkeleton from "../common/ImageWithSkeleton";
+import { projects } from "../../data/portfolioData";
+
+function ProjectImage({ project }) {
+  if (!project.image) {
+    return (
+      <div className="featured-project-placeholder">
+        <span>{project.title}</span>
+      </div>
+    );
+  }
+
+  return (
+    <ImageWithSkeleton
+      src={project.image}
+      alt={`${project.title} preview`}
+      className="featured-project-image"
+      loading="lazy"
+      skeletonHeight="100%"
+      skeletonWidth="100%"
+      wrapperStyle={{ width: "100%", height: "100%" }}
+    />
+  );
+}
 
 function Works() {
-    const projects = [
-        {
-            id: 1,
-            title: "GM Groups Club",
-            image: gm,
-            description: "Developed a dynamic and visually engaging website for GM Groups, a private club that owns and operates the popular Burgershot business. The website showcases the club’s identity, investor collaborations (e.g., with Tokyo Family), business ventures, and announcements.",
-            link: "https://gmgroups.site/",
-        },
-        {
-            id: 2,
-            title: "EKTHA'25",
-            image: ektha,
-            description: "Ektha is a dynamic website that serves as the digital hub for an innovative techno-cultural festival where technology meets artistic expression. The responsive site features an interactive event schedule that allows visitors to browse through workshops, hackathons, and cultural performances.",
-            link: "https://ektha2025.netlify.app/",
-        },
-        {
-            id: 3,
-            title: "Trancefit Gym",
-            image: Trancefit,
-            description: "Created a static highly responsive interactive website for the trancefit gym to showcase themselves for the internet.",
-            link: "https://trancefit.netlify.app/",
-        },
-        {
-            id: 4,
-            title: "Ultimate Fitness Point",
-            image: Ultimate,
-            description: "Ultimate fitness point is a dynamic gym website to showcase their gym in the internet and a management system to manage their gym members, classes, and payments.",
-            link: "https://ultimatefitnesspoint.netlify.app/",
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const orbTransform = useTransform(scrollYProgress, [0, 1], ["translateY(-80px)", "translateY(90px)"]);
+  const featuredProjects = projects.filter((project) => project.featured);
+  const selectedBuilds = projects.filter((project) => !project.featured).slice(0, 4);
 
-        },
-        {
-            id: 5,
-            title: "Ultimate Fitness App",
-            image: UltimateApp,
-            description: "Ultimate fitness app is a gym management system that helps gym owners to manage their gym members, classes, and payments. The responsive site features an interactive event schedule that allows visitors to browse through workshops, hackathons, and cultural performances.",
-            link: "https://ultimatefitnesspoint.netlify.app/login",
+  return (
+    <section id="projects" className="portfolio-section works-section" ref={sectionRef}>
+      <Motion.div className="projects-parallax-orb" style={{ transform: orbTransform }} />
 
-        }
-    ];
+      <div className="container">
+        <div className="section-heading centered">
+          <p className="section-kicker">Featured Work</p>
+          <h2>Case studies built around product thinking, clean UI, and full-stack execution.</h2>
+        </div>
 
-    return (
-        <section id="Works_section">
-            <div className="container">
-                <h2 className="text-center works_head" data-aos="fade-up">My <span>Works</span></h2>
+        <div className="featured-projects-grid">
+          {featuredProjects.map((project) => (
+            <article
+              key={project.id}
+              className="featured-project-card glass-panel"
+              style={{ "--project-accent": project.accent }}
+            >
+              <div className="featured-project-media">
+                <ProjectImage project={project} />
+                <span>{project.category}</span>
+              </div>
 
-                <Swiper
-                    effect={'coverflow'}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={'auto'}
-                    coverflowEffect={{
-                        rotate: 50,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: true,
-                    }}
-                    pagination={{ clickable: true }}
-                    autoplay={{
-                        delay: 3500,
-                        disableOnInteraction: false,
-                    }}
-                    modules={[EffectCoverflow, Pagination, Autoplay]}
-                    className="mySwiper"
-                >
-                    {projects.map((project) => (
-                        <SwiperSlide key={project.id} className="swiper-slide-custom">
-                            <div className="project-card glassmorphic">
-                                <div className="project-image">
-                                    <ImageWithSkeleton
-                                        src={project.image}
-                                        alt={project.title}
-                                        loading="lazy"
-                                        skeletonHeight="220px"
-                                        wrapperStyle={{ width: '100%', height: '100%' }}
-                                    />
-                                </div>
-                                <div className="project-content">
-                                    <h3>{project.title}</h3>
-                                    <p>{project.description}</p>
-                                    {project.link !== "#" ? (
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <i className="bi bi-box-arrow-up-right"></i>
-                                            <span>View Project</span>
-                                        </a>
-                                    ) : (
-                                        <div className="project-link disabled">
-                                            <i className="bi bi-lock-fill"></i>
-                                            <span>Coming Soon</span>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-        </section>
-    );
+              <div className="featured-project-body">
+                <div>
+                  <p>{project.type}</p>
+                  <h3>{project.title}</h3>
+                  <span>{project.role}</span>
+                </div>
+                <p className="featured-project-description">{project.description}</p>
+                <div className="featured-stack">
+                  {project.techStack.slice(0, 4).map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <Link className="project-text-link" to={`/projectspage/${project.id}`}>
+                  Read case study
+                  <i className="bi bi-arrow-up-right" />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="selected-builds">
+          <div className="selected-builds-header">
+            <p className="section-kicker">Selected Web Builds</p>
+            <Link to="/projectspage" className="project-text-link">
+              View all projects
+              <i className="bi bi-arrow-right" />
+            </Link>
+          </div>
+
+          <div className="selected-builds-grid">
+            {selectedBuilds.map((project) => (
+              <article
+                key={project.id}
+                className="selected-build-card glass-panel"
+                style={{ "--project-accent": project.accent }}
+              >
+                <div className="selected-build-image">
+                  <ProjectImage project={project} />
+                </div>
+                <div>
+                  <span>{project.category}</span>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <Link to={`/projectspage/${project.id}`} className="project-text-link">
+                    Details
+                    <i className="bi bi-arrow-up-right" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Works;
-
