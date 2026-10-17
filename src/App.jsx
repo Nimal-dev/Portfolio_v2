@@ -1,82 +1,125 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence, motion as Motion } from "framer-motion";
 import Lenis from "lenis";
-import "./App.css";
-import Home from "./components/Home";
-import ProjectsPage from "./components/ProjectsPage";
-import ProjectDetails from "./components/ProjectDetails";
+import Home from "./components/pages/Home";
+import ProjectsPage from "./components/pages/ProjectsPage";
+import ProjectDetails from "./components/pages/ProjectDetails";
+import Splash from "./components/common/Splash";
+import useReducedMotion from "./hooks/useReducedMotion";
 
-function ScrollToHash() {
+function ScrollManager() {
   const location = useLocation();
 
   useEffect(() => {
-    const scrollWithLenis = (target, options = {}) => {
+    const scrollTo = (target, options = {}) => {
       if (window.lenis) {
         window.lenis.scrollTo(target, {
-          duration: 1.35,
+          duration: 1.3,
           easing: (t) => 1 - Math.pow(1 - t, 4),
-          offset: -96,
+          offset: -(76 + 8),
           ...options,
         });
         return true;
       }
-
       return false;
     };
 
     if (!location.hash) {
-      if (!scrollWithLenis(0, { immediate: true, offset: 0 })) {
+      if (!scrollTo(0, { immediate: true, offset: 0 })) {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       }
       return undefined;
     }
 
-    const sectionId = location.hash.replace("#", "");
+    const id = location.hash.slice(1);
     let attempts = 0;
-    let timeoutId;
+    let timer;
 
-    const scrollToSection = () => {
-      const section = document.getElementById(sectionId);
-
-      if (section) {
-        if (!scrollWithLenis(section)) {
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+    const tryScroll = () => {
+      const node = document.getElementById(id);
+      if (node) {
+        if (!scrollTo(node)) node.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
-
-      if (attempts < 12) {
+      if (attempts < 15) {
         attempts += 1;
-        timeoutId = window.setTimeout(scrollToSection, 80);
+        timer = window.setTimeout(tryScroll, 80);
       }
     };
 
-    scrollToSection();
-
-    return () => window.clearTimeout(timeoutId);
+    tryScroll();
+    return () => window.clearTimeout(timer);
   }, [location.pathname, location.hash]);
 
   return null;
 }
 
-function App() {
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+function Page({ children }) {
+  const reduce = useReducedMotion();
+  return (
+    <Motion.div
+      initial={reduce ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={reduce ? undefined : { opacity: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
+      {children}
+    </Motion.div>
+  );
+}
 
-    const reduceMotion = prefersReducedMotion.matches;
-    const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <Page>
+              <Home />
+            </Page>
+          }
+        />
+        <Route
+          path="/projectspage"
+          element={
+            <Page>
+              <ProjectsPage />
+            </Page>
+          }
+        />
+        <Route
+          path="/projectspage/:id"
+          element={
+            <Page>
+              <ProjectDetails />
+            </Page>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+export default function App() {
+  const [splash, setSplash] = useState(true);
+  const endSplash = useCallback(() => setSplash(false), []);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lenis = new Lenis({
-      duration: reduceMotion ? 1.15 : 1.6,
-      easing: easeOutQuart,
-      lerp: reduceMotion ? 0.095 : 0.075,
+      duration: reduce ? 0.8 : 1.4,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
+      lerp: reduce ? 0.2 : 0.085,
       smoothWheel: true,
-      smoothTouch: false,
-      wheelMultiplier: reduceMotion ? 0.82 : 0.76,
-      touchMultiplier: reduceMotion ? 1.15 : 1.35,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.3,
       anchors: {
-        offset: -96,
-        duration: reduceMotion ? 1.05 : 1.45,
-        easing: easeOutQuart,
+        offset: -84,
+        duration: 1.3,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
       },
       autoRaf: true,
     });
@@ -91,14 +134,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ScrollToHash />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projectspage" element={<ProjectsPage />} />
-        <Route path="/projectspage/:id" element={<ProjectDetails />} />
-      </Routes>
+      <AnimatePresence>{splash && <Splash key="splash" onDone={endSplash} />}</AnimatePresence>
+      {!splash && (
+        <>
+          <ScrollManager />
+          <AnimatedRoutes />
+        </>
+      )}
     </BrowserRouter>
   );
 }
-
-export default App;

@@ -1,0 +1,109 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  border-bottom: var(--bw) solid var(--ink);
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+
+.splash__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--ink) 1.4px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.08;
+}
+
+.splash__stage {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  width: 0;
+  height: 0;
+}
+
+.splash__ripple {
+  position: absolute;
+  left: -70px;
+  top: -24px;
+  width: 140px;
+  height: 48px;
+  border-radius: 50%;
+  border: var(--bw) solid var(--ink);
+  background: transparent;
+}
+
+.splash__drop {
+  position: absolute;
+  left: -34px;
+  top: -68px;
+  width: 68px;
+  height: 68px;
+  background: var(--blue);
+  border: var(--bw) solid var(--ink);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform-origin: 50% 100%;
+  box-shadow: inset -8px -6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.splash__drop::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 26px solid var(--blue);
+  transform: translateX(-50%);
+}
+
+.splash__droplet {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  margin: -8px;
+}
+
+.splash__text {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  margin-top: clamp(6rem, 18vh, 10rem);
+  text-align: center;
+  padding-inline: var(--gutter);
+}
+
+.splash__title {
+  font-size: clamp(3.4rem, 11vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.splash__sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.splash__skip {
+  margin-top: 1.2rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
